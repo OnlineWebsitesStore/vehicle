@@ -25,6 +25,8 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'Bestmomo\\Scafold\\Http\\Controllers\\HomeController' => $vendorDir . '/bestmomo/scafold/src/Http/Controllers/HomeController.php',
+    'Bestmomo\\Scafold\\ScafoldServiceProvider' => $vendorDir . '/bestmomo/scafold/src/ScafoldServiceProvider.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'ClassPreloader\\ClassList' => $vendorDir . '/classpreloader/classpreloader/src/ClassList.php',
