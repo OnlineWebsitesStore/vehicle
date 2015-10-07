@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <title>Webuild - Vehicle</title>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+    <!-- siimple style -->
+    <link href="../resources/assets/home/css/style.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+  <body>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
+    <div id="wrapper">
         <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h1>Vehicle</h1>
+                    <h2 class="subtitle">We're working hard to improve our website and we'll ready to launch after</h2>
+                    <div id="countdown"></div>
+                </div>
+                
             </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                        <p class="copyright">Copyright &copy; 2015 - Vehicle</p>
+            </div>
+            </div>      
         </div>
-    </body>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="../resources/assets/home/js/jquery.countdown.min.js"></script>
+    <script type="text/javascript">
+  $('#countdown').countdown('2015/12/06', function(event) {
+    $(this).html(event.strftime('%w weeks %d days <br /> %H:%M:%S'));
+  });
+</script>
+  </body>
 </html>
