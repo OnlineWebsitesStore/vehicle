@@ -13,7 +13,7 @@
     
 
     <!-- siimple style -->
-    <link href="../resources/assets/home/css/style.css" rel="stylesheet">
+    <link href='{{ asset("assets/home/css/style.css") }}' rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -23,7 +23,7 @@
   </head>
 
   <body>
-
+{{ asset("resources/assets/home/css/style.css") }}
     <div id="wrapper">
         <div class="container">
             <div class="row">
