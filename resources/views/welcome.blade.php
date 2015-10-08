@@ -23,7 +23,7 @@
   </head>
 
   <body>
-{{ asset("resources/assets/home/css/style.css") }}
+
     <div id="wrapper">
         <div class="container">
             <div class="row">
