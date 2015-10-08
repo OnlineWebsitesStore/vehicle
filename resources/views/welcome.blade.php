@@ -43,7 +43,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="../resources/assets/home/js/jquery.countdown.min.js"></script>
+    <script src="{{ asset("resources/assets/home/js/jquery.countdown.min.js") }}"></script>
     <script type="text/javascript">
   $('#countdown').countdown('2015/12/06', function(event) {
     $(this).html(event.strftime('%w weeks %d days <br /> %H:%M:%S'));
