@@ -1,0 +1,20 @@
+{
+    "name": "Vehicle/Taxonomy",
+    "description": "Create and functionality of taxonomy",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hitesh Mittal",
+            "email": "hiteshmittal1990@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr~4": {
+            "Vehicle\\Taxonomy\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "-5"
+    }
+}

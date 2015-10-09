@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
+    'Vehicle\\Taxonomy\\' => array($baseDir . '/packages/Vehicle/Taxonomy/src'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),

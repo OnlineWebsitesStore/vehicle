@@ -139,6 +139,9 @@ return [
 
         Bestmomo\Scafold\ScafoldServiceProvider::class,
 
+        // Taxonomy service provider class.
+        Vehicle\Taxonomy\TaxonomyServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
