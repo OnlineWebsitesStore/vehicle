@@ -8,5 +8,9 @@ class Vocabulary extends Model
 {
     protected $table = 'taxonomy_vocabulary';
 
-    protected $fillable = ['name', 'description'];
+    public $timestamps = false;
+
+    protected $fillable = [
+    	'name', 'description'
+    ];
 }

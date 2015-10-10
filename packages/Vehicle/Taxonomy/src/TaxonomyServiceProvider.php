@@ -19,7 +19,7 @@ class TaxonomyServiceProvider extends ServiceProvider
         require __DIR__ . '/Http/routes.php';
 
         // Defines path for the view files.
-        $this->loadViewsFrom(__DIR__ . '/../Views/', 'taxonomy');
+        $this->loadViewsFrom(__DIR__ . '/../views/', 'taxonomy');
 
         // Defines the files which are going to published.
         $this->publishes([

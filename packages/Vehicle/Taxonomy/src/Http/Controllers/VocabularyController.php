@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 use Vehicle\Taxonomy\Models\Vocabulary;
+use Vehicle\Taxonomy\Http\Requests\CreateVocabularyRequest;
 
 class VocabularyController extends Controller
 {
@@ -16,6 +17,7 @@ class VocabularyController extends Controller
     {
         $this->vocabulary = $vocabulary;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +26,7 @@ class VocabularyController extends Controller
     public function index()
     {
         $vocabs = $this->vocabulary->all();
-        return View('taxonomy::vocabulary/list', compact('vocabs'));
+        return View('taxonomy::vocabulary.list', compact('vocabs'));
     }
 
     /**
@@ -34,7 +36,7 @@ class VocabularyController extends Controller
      */
     public function create()
     {
-        //
+        return view('taxonomy::vocabulary.create');
     }
 
     /**
@@ -43,9 +45,10 @@ class VocabularyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateVocabularyRequest $request)
     {
-        //
+        $this->vocabulary->create($request->all());
+        return redirect()->route('vocabulary.index');
     }
 
     /**

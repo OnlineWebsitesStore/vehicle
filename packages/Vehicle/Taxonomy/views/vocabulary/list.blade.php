@@ -7,6 +7,9 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Taxonomy Vocabulary</h3>
+                    <div class="box-tools">
+                        <a href="{{ url('admin/vocabulary/create') }}" class="btn btn-primary">+Add Vocabulary</a>
+                    </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
