@@ -23,7 +23,8 @@ class VocabularyController extends Controller
      */
     public function index()
     {
-        return View('taxonomy::vocab');
+        $vocabs = $this->vocabulary->all();
+        return View('taxonomy::vocabulary/list', compact('vocabs'));
     }
 
     /**
