@@ -35,7 +35,7 @@
                     	</div>
                    	</div><!-- /.box-body -->
                   	<div class="box-footer">
-	                    <a href="{{ url('/admin/vocabulary') }}" class="btn btn-default">Cancel</a>
+	                    <a href="{{ url('/admin/vocabulary') }}" class="btn btn-default pull-left">Cancel</a>
 	                    <button type="submit" class="btn btn-info pull-right">Create</button>
                   	</div><!-- /.box-footer -->
                 </form>

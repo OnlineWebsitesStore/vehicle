@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 use Vehicle\Taxonomy\Models\Vocabulary;
 use Vehicle\Taxonomy\Http\Requests\CreateVocabularyRequest;
+use Session;
+use Redirect;
 
 class VocabularyController extends Controller
 {
@@ -48,7 +50,8 @@ class VocabularyController extends Controller
     public function store(CreateVocabularyRequest $request)
     {
         $this->vocabulary->create($request->all());
-        return redirect()->route('vocabulary.index');
+        Session::flash('message', 'Vocabulary created successfully');
+        return Redirect::to('admin/vocabulary');
     }
 
     /**
@@ -68,9 +71,13 @@ class VocabularyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($vocabulary)
     {
-        //
+        if(is_numeric($vocabulary))
+        {
+            $vocab = $this->vocabulary->where('vid', $vocabulary)->first();
+            return View('taxonomy::vocabulary.edit', compact('vocab'));
+        }
     }
 
     /**
@@ -80,9 +87,27 @@ class VocabularyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateVocabularyRequest $request, $vocabulary)
     {
-        //
+        $this->vocabulary->where('vid', $vocabulary)->update($request->except(['_method','_token']));
+
+        Session::flash('message', 'Vocabulary updated successfully');
+        return Redirect::to('admin/vocabulary');
+    }
+
+    /**
+     * Confirm Delete the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function confirm($vocabulary)
+    {
+        if(is_numeric($vocabulary))
+        {
+            $vocab = $this->vocabulary->where('vid', $vocabulary)->first();
+            return view('taxonomy::vocabulary.confirm', compact('vocab') );
+        }
     }
 
     /**
@@ -91,8 +116,19 @@ class VocabularyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($vocabulary)
     {
-        //
+        if(is_numeric($vocabulary))
+        {    
+            // delete
+            $this->vocabulary->where('vid', $vocabulary)->delete();
+            Session::flash('message', 'Vocabulary deleted successfully!');
+        }
+        else 
+        {
+            // redirect
+            Session::flash('message', 'Some problem with deleting the vocabulary!');
+        }    
+        return Redirect::to('admin/vocabulary');
     }
 }
